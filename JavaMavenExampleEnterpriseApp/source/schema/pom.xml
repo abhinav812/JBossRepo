@@ -1,0 +1,23 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.abhinav.mavenexample.app</groupId>
+		<artifactId>JavaMavenExampleEnterpriseApp-source</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>JavaMavenExampleEnterpriseApp-schema</artifactId>
+	<packaging>pom</packaging>
+
+	<!-- MAVEN SITE INFORMATION Start -->
+	<name>JavaMavenExampleEnterpriseApp schema module</name>
+	<description>You can find Schema Module content with this Module. </description>
+	<!-- MAVEN SITE INFORMATION End -->
+
+	<modules>
+		<module>axmlb</module>
+		<module>jaxb</module>
+	</modules>
+
+</project>

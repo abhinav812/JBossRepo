@@ -1,0 +1,77 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.abhinav.mavenexample.app</groupId>
+		<artifactId>JavaMavenExampleEnterpriseApp-root</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<artifactId>JavaMavenExampleEnterpriseApp-source</artifactId>
+	<name>Java Maven Example Enterprise App Source</name>
+	<packaging>pom</packaging>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- Common API's -->
+
+			<!-- JBoss distributes a complete set of Java EE 6 APIs including a Bill 
+				of Materials (BOM). A BOM specifies the versions of a "stack" (or a collection) 
+				of artifacts. We use this here so that we always get the correct versions 
+				of artifacts. Here we use the jboss-javaee-6.0-with-tools stack (you can 
+				read this as the JBoss stack of the Java EE 6 APIs, with some extras tools 
+				for your project, such as Arquillian for testing) and the jboss-javaee-6.0-with-hibernate 
+				stack you can read this as the JBoss stack of the Java EE 6 APIs, with extras 
+				from the Hibernate family of projects) -->
+			<dependency>
+				<groupId>org.jboss.bom</groupId>
+				<artifactId>jboss-javaee-6.0-with-tools</artifactId>
+				<version>${version.jboss.bom}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.jboss.bom</groupId>
+				<artifactId>jboss-javaee-6.0-with-hibernate</artifactId>
+				<version>${version.jboss.bom}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<!-- Testing API's -->
+			<dependency>
+				<groupId>org.mockito</groupId>
+				<artifactId>mockito-all</artifactId>
+				<version>1.9.0</version>
+				<scope>test</scope>
+			</dependency>
+			
+			<!-- XBeans -->
+			<dependency>
+				<groupId>org.apache.xmlbeans</groupId>
+				<artifactId>xmlbeans</artifactId>
+				<version>2.4.0</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<!-- Child Modules -->
+	<modules>
+		<module>schema</module>
+		<module>java</module>
+		<module>ejb</module>
+		<module>client</module>
+		<module>ws-generated</module>
+		<module>web</module>
+		<module>ear</module>
+	</modules>
+
+	<repositories>
+		<repository>
+			<id>java.net-m2</id>
+			<name>java.net - Maven 2</name>
+			<url>https://repository.jboss.org/nexus/content/repositories/java.net-m2</url>
+		</repository>
+	</repositories>
+</project>

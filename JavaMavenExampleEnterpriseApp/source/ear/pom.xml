@@ -1,0 +1,94 @@
+﻿<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.abhinav.mavenexample.app</groupId>
+		<artifactId>JavaMavenExampleEnterpriseApp-source</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+
+
+	<artifactId>JavaMavenExampleEnterpriseApp-ear</artifactId>
+	<packaging>ear</packaging>
+	<!-- MAVEN SITE INFORMATION Start -->
+	<name>Java Maven Example Enterprise App EAR Module</name>
+	<description>You can find all EAR packaging content with this Module, It is Child project of JavaMavenExampleEnterpriseApp.</description>
+	<!-- MAVEN SITE INFORMATION End -->
+
+	<dependencies>
+
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>JavaMavenExampleEnterpriseApp-ejb</artifactId>
+			<version>${project.version}</version>
+			<type>ejb</type>
+		</dependency>
+
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>JavaMavenExampleEnterpriseApp-web</artifactId>
+			<version>${project.version}</version>
+			<type>war</type>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+				<configuration>
+					<finalName>JavaMavenExampleEnterpriseApp</finalName>
+					<displayName>${project.artifactId}-${project.version}</displayName>
+					<defaultLibBundleDir>/APP-INF/lib</defaultLibBundleDir>
+					<version>5</version>
+					<modules>
+						<ejbModule>
+							<groupId>${project.group.id}</groupId>
+							<artifactId>JavaMavenExampleEnterpriseApp-ejb</artifactId>
+							<bundleFileName>JavaMavenExampleEnterpriseApp-ejb-${project.version}.jar</bundleFileName>
+							<bundleDir>/</bundleDir>
+						</ejbModule>
+					</modules>
+					<archive>
+						<manifest>
+							<addClasspath>false</addClasspath>
+						</manifest>
+					</archive>
+					<!-- <jboss> <version>5</version> <loader-repository>com.mitchell:archive=com.mitchell.services.business.shop</loader-repository> 
+						</jboss> -->
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>${maven-site-plugin.version}</version>
+				<configuration>
+					<skip>true</skip>
+					<skipDeploy>true</skipDeploy>
+				</configuration>
+			</plugin>
+
+		</plugins>
+		<!-- <pluginManagement> <plugins> This plugin's configuration is used to 
+			store Eclipse m2e settings only. It has no influence on the Maven build itself. 
+			<plugin> <groupId>org.eclipse.m2e</groupId> <artifactId>lifecycle-mapping</artifactId> 
+			<version>1.0.0</version> <configuration> <lifecycleMappingMetadata> <pluginExecutions> 
+			<pluginExecution> <pluginExecutionFilter> <groupId> org.apache.maven.plugins 
+			</groupId> <artifactId> maven-dependency-plugin </artifactId> <versionRange> 
+			[2.4,) </versionRange> <goals> <goal>unpack</goal> </goals> </pluginExecutionFilter> 
+			<action> <ignore></ignore> </action> </pluginExecution> </pluginExecutions> 
+			</lifecycleMappingMetadata> </configuration> </plugin> </plugins> </pluginManagement> -->
+	</build>
+</project>

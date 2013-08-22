@@ -1,0 +1,92 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<name>Java Maven Example Enterprise App</name>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.abhinav.mavenexample.app</groupId>
+	<artifactId>JavaMavenExampleEnterpriseApp-root</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<description>Java Maven Example Enterprise App</description>
+
+	<!-- Child Modules -->
+	<modules>
+		<module>source</module>
+	</modules>
+
+	<properties>
+		<!-- project related information -->
+		<project.group.id>com.abhinav.mavenexample.app</project.group.id>
+	
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<version.jboss.maven.plugin>7.3.Final</version.jboss.maven.plugin>
+		<version.jboss.as>7.2.0.Final</version.jboss.as>
+		<version.jboss.bom>1.0.4.Final</version.jboss.bom>
+
+		<!-- other plugin versions -->
+		<version.compiler.plugin>2.3.2</version.compiler.plugin>
+		<version.surefire.plugin>2.4.3</version.surefire.plugin>
+		<version.war.plugin>2.1.1</version.war.plugin>
+		<version.ear.plugin>2.6</version.ear.plugin>
+		<version.ejb.plugin>2.3</version.ejb.plugin>
+
+		<!-- maven-compiler-plugin -->
+		<maven.compiler.target>1.6</maven.compiler.target>
+		<maven.compiler.source>1.6</maven.compiler.source>
+
+		<maven-site-plugin.version>3.3</maven-site-plugin.version>
+		
+		<!-- API's version related -->
+		<spring.version>3.2.1.RELEASE</spring.version>
+		<eclipselink.version>2.4.0</eclipselink.version>
+		<hibernate.version>3.6.3.Final</hibernate.version>
+		
+		<jbossall-client.groupId>jboss</jbossall-client.groupId>
+		<jbossall-client.artifactId>jbossall-client</jbossall-client.artifactId>
+		<jbossall-client.version>4.2.2.GA</jbossall-client.version>
+	</properties>
+
+	<dependencies>
+		
+	</dependencies>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.apache.maven.plugins
+										</groupId>
+										<artifactId>
+											maven-dependency-plugin
+										</artifactId>
+										<versionRange>
+											[2.1,)
+										</versionRange>
+										<goals>
+											<goal>unpack</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+</project>

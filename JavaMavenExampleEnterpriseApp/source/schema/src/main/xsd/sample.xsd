@@ -1,0 +1,21 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://www.mitchell.com/schemas/shopassignment/assingnmentpullrequest"
+            xmlns:mxs="http://www.mitchell.com/schemas/shopassignment/assingnmentpullrequest" 
+            elementFormDefault="qualified" 
+            attributeFormDefault="unqualified">
+            
+	<xs:element name="ShopAssignmentRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RequestId" type="xs:string" minOccurs="0"/>
+				<xs:element name="CompanyCode" type="xs:string"/>
+				<xs:element name="ShopReviewerID" type="xs:string"/>
+				<xs:element name="Claim-suffix" type="xs:string"/>
+				<xs:element name="LicensePlate" type="xs:string" minOccurs="0"/>
+				<xs:element name="AssignmentType" type="xs:string" minOccurs="0"/>
+				<xs:element name="ErrorCode" type="xs:string" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+</xs:schema>

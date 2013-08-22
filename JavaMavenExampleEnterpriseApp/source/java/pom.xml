@@ -1,0 +1,103 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.abhinav.mavenexample.app</groupId>
+		<artifactId>JavaMavenExampleEnterpriseApp-source</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>JavaMavenExampleEnterpriseApp-java</artifactId>
+
+	<!-- MAVEN SITE INFORMATION Start -->
+	<name>JavaMavenExampleEnterpriseApp java</name>
+	<description>pojo for JavaMavenExampleEnterpriseApp.</description>
+	<!-- MAVEN SITE INFORMATION End -->
+
+	<dependencies>
+		<!-- Third Party -->
+		<!-- <dependency>
+			<groupId>jboss</groupId>
+			<artifactId>${jbossall-client.artifactId}</artifactId>
+			<version>${jbossall-client.version}</version>
+			<scope>provided</scope>
+		</dependency> -->
+		<!-- <dependency> <groupId>javax.ejb</groupId> <artifactId>ejb-api</artifactId> 
+			<scope>provided</scope> </dependency> <dependency> <groupId>com.redhat.jboss</groupId> 
+			<artifactId>spring-context</artifactId> <scope>provided</scope> </dependency> 
+			<dependency> <groupId>com.redhat.jboss</groupId> <artifactId>spring-core</artifactId> 
+			<scope>provided</scope> </dependency> <dependency> <groupId>com.redhat.jboss</groupId> 
+			<artifactId>spring-beans</artifactId> <scope>provided</scope> </dependency> 
+			<dependency> <groupId>com.oracle</groupId> <artifactId>ojdbc6</artifactId> 
+			<scope>provided</scope> </dependency> -->
+
+		<!-- Spring Framework dependency -->
+		<!-- Spring 3 dependencies -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<!-- Apache log4j dependency -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+
+		<!-- jMock 2 dependency -->
+		<dependency>
+			<groupId>org.jmock</groupId>
+			<artifactId>jmock-junit3</artifactId>
+			<version>2.5.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jmock</groupId>
+			<artifactId>jmock</artifactId>
+			<version>2.5.1</version>
+			<scope>test</scope>
+		</dependency>
+
+
+
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>JavaMavenExampleEnterpriseApp-schema-axmlb</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<!-- This application -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>JavaMavenExampleEnterpriseApp-schema-axmlb</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<!-- Test Only -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<!-- <exclusions> <exclusion> <groupId>org.hamcrest</groupId> <artifactId>hamcrest-core</artifactId> 
+				</exclusion> </exclusions> -->
+			<version>4.8.2</version>
+		</dependency>
+
+		<!-- <dependency> <groupId>org.mockito</groupId> <artifactId>mockito-all</artifactId> 
+			<scope>test</scope> </dependency> -->
+		<!-- Existing Project Libs End -->
+	</dependencies>
+</project>

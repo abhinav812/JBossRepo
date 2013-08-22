@@ -1,0 +1,21 @@
+# Eclipse specific files
+.classpath
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# ignore all bin directories
+# matches "bin" in any subfolder
+bin/
+
+# ignore all target directories
+target/
+build/
+
+# ignore all the .settings directory
+.settings/
+
+# ignore all files ending with ~
+*~ 
