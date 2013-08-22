@@ -1,4 +1,4 @@
 JBossRepo
 =========
 
-Maven based Java EE Sample
+Maven based Java EE Sample Application.
